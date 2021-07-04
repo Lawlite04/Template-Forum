@@ -1,0 +1,236 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-size: small;
+}
+
+html,body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+
+.logo{
+    font-weight: 600;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    background-color: #bbbbbb;
+    height: 50px;
+    align-items: center;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    font-size: small;
+    width: 40%;    
+    justify-content: space-evenly;
+}
+
+nav ul li{    
+    padding: 5px 10px;
+    border: none;
+    border-radius: 2rem;
+}
+nav ul li:nth-child(3){
+    background-color: white;    
+    padding: 5px 10px;
+    border: none;
+    border-radius: 2rem;
+}
+nav ul li:nth-child(3) a{
+    color: rgb(71, 71, 71);
+    font-weight: 600;
+}
+nav ul li:nth-child(3) a:hover{
+    color: black;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: 600;
+}
+
+nav ul li a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.jumbotron{
+    margin-top: 3rem;    
+    background-image: url('./images/Background.jpeg');
+    background-size: cover;
+}
+
+/* humberger menu */
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    height: 25px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+.menu-toggle input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 3;
+}
+
+/* animasi menu toggle */
+
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(1px, -2px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+    transform: scale(0);
+    opacity: 0;
+}
+
+/* lainnya */
+.round{
+    border-radius: 2rem;
+}
+
+.bg-one{
+    background-color: #3d5fdc;
+}
+.bg-two{
+    background-color: #bbbbbb;
+}
+
+#lightSlider{
+    margin: 20px 0;
+}
+
+#lightSlider li {
+    background-color: rgb(100, 100, 255);
+    text-align: center;
+    min-width: 200px;
+    border-radius: 2rem;
+    padding: 3px;
+    cursor: pointer;
+}
+#lightSlider li a{
+    font-weight: 500;
+    color: #dbdada;
+    text-decoration: none;
+}
+#lightSlider li a:hover{
+    color: white;
+    display: block;
+    border-radius: 2rem;
+    width: 100%;
+    text-decoration: none;
+    
+}
+
+
+
+/* footer */
+footer{
+    background-color: #242a30;
+}
+.new-topic{
+    list-style: none;
+}
+.new-topic li a, footer h4{
+    color: #CFD0D1;
+    font-weight: 500;
+}
+footer p{
+    color: #A6A9AB;
+}
+
+#footer-nav{
+    height: auto;
+    background-color: #1d2226;
+    color: #A6A9AB;;
+}
+
+/* navbar footer */
+.navs{
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+}
+
+@media (max-width: 768px){
+    nav ul {
+        width: 50%;
+    }
+    #main .container .row .welcome{
+        margin-left: 50px;
+    }
+    #lightSlider li {
+        min-width: 100px;
+    }
+}
+
+@media (max-width: 576px){
+    #lightSlider li {
+        min-width: 80px;
+    }
+    #main .container .row .welcome{
+        margin-left: 50px;
+    }
+    
+    .menu-toggle{
+        display: flex;
+    }
+    nav ul{
+        position: absolute;
+        background-color: #3d5fdce8;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: 2;
+        opacity: 0;
+        transform: translateX(-120%);
+        transition: all 0.5s ease;
+    }
+    nav ul.slide{
+        opacity: 1;
+        transform: translateX(0);
+    }   
+
+    .navs{
+        flex-direction: column;
+    }
+}
